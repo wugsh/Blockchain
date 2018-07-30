@@ -1,4 +1,4 @@
-# 案例1:  用Remix发行自己的代币
+# 案例1:  使用Remix发行自己的代币
 
 Remix [https://remix.ethereum.org/](https://remix.ethereum.org/) 这是最简单方便的智能合约开发环境，直接在浏览器里编写、调试智能合约。
 
