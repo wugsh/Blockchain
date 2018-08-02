@@ -1,7 +1,7 @@
 # Summary
 
 * [Introduction](README.md)
-* 理论
+* [理论](li-lun.md)
   * [区块链之基础知识](jichu-zhishi.md)
   * [区块链之以太坊开发环境搭建](qu-kuai-lian-zhi-yi-tai-fang-kai-fa-huan-jing-da-jian.md)
   * [truffle-contract调用智能合约](truffle-contract.md)
