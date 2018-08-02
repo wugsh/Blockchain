@@ -1,4 +1,4 @@
-### 案例2. Truffle开发以太坊DAPP
+# 案例2. Truffle开发以太坊DAPP
 
 **step 1.创建一个项目**
 
