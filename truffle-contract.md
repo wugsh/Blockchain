@@ -4,10 +4,10 @@ _与以太坊的智能合约交互，除了使用web3.js，还可以使用另外
 
 ## truffle-contract具有以下特色：
 
-> 1. **同步的交易\*\***：\*\*可以确保在交易生效之后再继续执行其他操作 
-> 2. **返回Promise：**每个封装的合约函数会返回Promise，可以对它进行.then操作，避免了回调地狱（callback hell）问题;
-> 3. **为交易提供了默认参数：**例如from或gas 
-> 4. **为每个同步的交易返回logs、交易receipt和交易hash**
+ 1. **同步的交易：**可以确保在交易生效之后再继续执行其他操作 
+ 2. **返回Promise：**每个封装的合约函数会返回Promise，可以对它进行.then操作，避免了回调地狱（callback hell）问题;
+ 3. **为交易提供了默认参数：**例如from或gas 
+ 4. **为每个同步的交易返回logs、交易receipt和交易hash**
 
 ## 安装truffle-contract：
 
