@@ -18,7 +18,12 @@ $ mkdir truffle-contract-test && cd truffle-contract-test
 $ npm init
 ```
 
+接下来安装truffle-contract：
 
+```
+$ npm install web3 --save
+$ npm install truffle-contract --save
+```
 
 ## truffle-contract调用智能合约步骤：
 
