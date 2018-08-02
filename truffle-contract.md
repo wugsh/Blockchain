@@ -9,10 +9,16 @@ _与以太坊的智能合约交互，除了使用web3.js，还可以使用另外
 > 3. **为交易提供了默认参数：**例如from或gas 
 > 4. **为每个同步的交易返回logs、交易receipt和交易hash**
 
-## 使用truffle-contract需要安装：
+## 安装truffle-contract：
 
-* web3
-* truffle-contract
+首先新建一个Nodejs项目并初始化：
+
+```
+$ mkdir truffle-contract-test && cd truffle-contract-test
+$ npm init
+```
+
+
 
 ## truffle-contract调用智能合约步骤：
 
@@ -119,7 +125,7 @@ MetaCoin.at(contract_address).then(function(instance){
 });
 ```
 
-调用sendCoin会向区块链发送一笔交易，在交易生效之后，才会执行回调函数，回调函数的参数中包含了交易hash、交易执行结果以及交易产生的事件。   
+调用sendCoin会向区块链发送一笔交易，在交易生效之后，才会执行回调函数，回调函数的参数中包含了交易hash、交易执行结果以及交易产生的事件。  
 **捕获事件**可以通过result.logs获取交易触发的事件：
 
 ```
