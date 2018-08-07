@@ -14,27 +14,14 @@ Node.js是一个Javascript运行环境
 
 > **源码安装Node.js**
 >
-> 以下部分我们将介绍在Ubuntu Linux下安装 Node.js 。 其他的Linux系统，如Centos等类似如下安装步骤。
->
-> 1.在 Github 上获取 Node.js 源码：
+> 以下部分我们将介绍在Ubuntu/Debain Linux下安装 Node.js 。 其他的Linux系统，如Centos等类似如下安装步骤。
 >
 > ```
->   $ git clone https://github.com/nodejs/node.git
+> sudo apt-get install nodejs
 > ```
 >
-> 2.使用 ./configure 创建编译文件，并按照：
->
 > ```
->   $ cd node
->   $ ./configure
->   $ make
->   $ sudo make install
-> ```
->
-> 3.查看 node 版本：
->
-> ```
->   $ node --version
+> sudo apt-get install npm
 > ```
 
 **安装节点仿真器**
