@@ -11,4 +11,5 @@
   * [使用Remix发行自己的代币](an-li-1-yong-remix-fa-xing-zi-ji-de-dai-bi.md)
   * [Truffle开发以太坊DAPP](anli2.md)
 * [EOS常用命令](eos.md)
+* [EOS智能合约-记事本](eoszhi-neng-he-7ea6-ji-shi-ben.md)
 
