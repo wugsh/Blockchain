@@ -40,7 +40,7 @@
 
 `投票生产块：`
 
-`注册节点；cleos -u http://127.0.0.1:8000 system regproducer cerneweosedu `
+`注册节点；cleos -u http://127.0.0.1:8000 system regproducer cerneweosedu`
 
 `投票抵押；cleos -u http://127.0.0.1:8000 system delegatebw  cerneweosedu cerneweosedu '25000000.0000 EOS' '25000000.0000 EOS'`
 
@@ -49,42 +49,29 @@
 `  
 `
 
-`  
-`
-
 `查看出块节点： cleos -u http://127.0.0.1:8000  get schedule`
 
 `列出所有BP:    cleos -u http://127.0.0.1:8000 system listproducers`
 
-`  
-`
 
-`  
-`
 
 `编译合约：`
 
-`新版本：eosio-cpp -abigen hello.cpp -o hello.wasm`
+　　`新版本：eosio-cpp -abigen hello.cpp -o hello.wasm`
 
 `  
-`
+　　　老版本：`
 
-`老版本：`
+　　　　`eosiocpp -g hello.abi  hello.cpp`
 
-`eosiocpp -g hello.abi  hello.cpp`
-
-`eosiocpp -o hello.wasm hello.cpp`
-
-`  
-`
+　　　　`eosiocpp -o hello.wasm hello.cpp`
 
 `  
 `
 
 `部署合约： cleos -u http://127.0.0.1:8000 set contract cerneweosedu hello/ -p cerneweosedu`
 
-`  
-`
+
 
 `执行合约： cleos -u http://127.0.0.1:8000 push action cerneweosedu hi '["wgs"]' -p cerneweosedu`
 
