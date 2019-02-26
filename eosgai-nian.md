@@ -8,3 +8,29 @@
 
 `如果你想你需要使用一个字符串做索引，需要转换成一个整数型，将结果存储在随后索引的字段中。`
 
+1. ### 创建一个结构
+
+`创建一个可以存储在多索引表中的结构，并在要索引的字段上定义getter。`
+
+`请记住，这些getter中必须有一个命名为primary_key()，如果没有这个，编译器eosiocpp将产生一个错误…”it can’t find the field to use as the primary key”即它找不到任何一个字段被作为主键。`
+
+`如果你想要有一个以上的索引，（最多允许16个），然后为你想要索引的任何字段定义一个getter，这时这个名称就不那么重要了，因为你会把getter名称传递给typedef。`
+
+```cpp
+ ///@abi table
+ struct mystruct 
+ {
+
+    uint64_t     key; 
+    uint64_t     secondid;
+    std::string  name; 
+    std::string  account; 
+
+    uint64_t primary_key() const { return key; } // getter for primary key
+    uint64_t by_id() const {return secondid; } // getter for additional key
+
+ };
+```
+
+
+
