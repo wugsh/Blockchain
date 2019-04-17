@@ -14,6 +14,6 @@
   * [EOS概念](eosgai-nian.md)
   * [EOS常用命令](eos.md)
   * [EOS智能合约-记事本](eoszhi-neng-he-7ea6-ji-shi-ben.md)
-* [fabric 1.4](null)
+* [fabric 1.4](fabric1.4部署.md)
   * [fabric 1.4入门](fabric1.4部署.md)
 
