@@ -10,7 +10,10 @@
 * [案例 ](ani.md)
   * [使用Remix发行自己的代币](an-li-1-yong-remix-fa-xing-zi-ji-de-dai-bi.md)
   * [Truffle开发以太坊DAPP](anli2.md)
-* [EOS常用命令](eos.md)
-* [EOS智能合约-记事本](eoszhi-neng-he-7ea6-ji-shi-ben.md)
-* [EOS概念](eosgai-nian.md)
+* EOS 
+  * [EOS概念](eosgai-nian.md)
+  * [EOS常用命令](eos.md)
+  * [EOS智能合约-记事本](eoszhi-neng-he-7ea6-ji-shi-ben.md)
+* [fabric 1.4](fabric1.4部署.md)
+  * [fabric 1.4入门](fabric1.4部署.md)
 
