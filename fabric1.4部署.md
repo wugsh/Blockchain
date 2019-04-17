@@ -141,9 +141,74 @@
 **（9）在Peer节点（peer1.org2）执行链码查询a的值**
 ![](https://i.imgur.com/Z4T1eUu.png)
 
-######3.5 关闭网络
+###3.5 关闭网络
 执行以下命令关闭提供的`fabric-samples`中的`first-network`网络
 
     ./byfn.sh -m down
 
+##4 手动体验fabric部署
+先构建网络，也就是通过`bootstrap.sh`脚本下载完成相关镜像文件。
+###4.1 部署超级账本网络
+先下载`fabric-samples`文件
 
+    git clone https://github.com/hyperledger/fabric-samples.git
+
+进入`basic-network`目录，利用`docker-compose`启动容器
+
+![](https://i.imgur.com/dSLvUDj.png)
+
+可以用`docker ps`查看容器启动情况：
+
+![](https://i.imgur.com/o7XAdcS.png)
+
+**切换到管理员用户再创建通道和加入通道：**
+
+切换环境到管理员用户的`MSP`，进入`peer`节点容器`peer0.org1.example.com`
+
+    docker exec -it -e "CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/msp/users/Admin@org1.example.com/msp" peer0.org1.example.com bash
+
+创建通道
+    
+    root@8bce6cf7abcd:/opt/gopath/src/github.com/hyperledger/fabric# peer channel create -o orderer.example.com:7050 -c mychannel -f /etc/hyperledger/configtx/channel.tx
+
+加入通道
+
+    root@8bce6cf7abcd:/opt/gopath/src/github.com/hyperledger/fabric# peer channel join -b mychannel.block
+    
+退出`peer`节点容器`peer0.org1.example.com`
+
+    root@8bce6cf7abcd:/opt/gopath/src/github.com/hyperledger/fabric# exit
+
+进入`cli`容器安装链码和实例化
+
+    [root@master basic-network]# docker exec -it cli /bin/bash
+
+给`peer`节点`peer0.org1.example.com`安装链码
+
+    root@0c6f50b96708:/opt/gopath/src/github.com/hyperledger/fabric/peer# peer chaincode install -n mycc -v v0 -p github.com/chaincode_example02
+
+这一步可能会报下面的错：
+根据错误可知，是`/opt/gopath/src/github.com/chaincode_example02`路径下没有需要的`chaincode_example02.go`文件，通过下面的命令找到了此文件
+![](https://i.imgur.com/pHZFqz3.png)
+
+找到后将此文件复制到`/opt/gopath/src/github.com/chaincode_example02`路径下即可解决（注意要在`cli`容器用户下进行复制）。
+
+**实例化链码**
+
+    root@0c6f50b96708:/opt/gopath/src/github.com/hyperledger/fabric/peer# peer chaincode instantiate -o orderer.example.com:7050 -C mychannel -n mycc -v v0 -c '{"Args":["init","a","100","b","200"]}'
+
+
+**链码调用和查询**
+
+链码实例化之后就可以查询初始值了，同样是在`cli`容器中进行
+`root@0c6f50b96708:/opt/gopath/src/github.com/chaincode_example02# peer chaincode query -C mychannel -n mycc -c '{"Args":["query","a"]}'`
+
+调用链码，从“a”转移10到“b”
+`root@0c6f50b96708:/opt/gopath/src/github.com/chaincode_example02# peer chaincode invoke -C mychannel -n mycc -c '{"Args":["invoke","a","b","10"]}`'
+
+再次查询“a”和“b”的值
+
+    root@0c6f50b96708:/opt/gopath/src/github.com/hyperledger/fabric/peer# peer chaincode query -C mychannel -n mycc -c '{"Args":["query","a"]}'
+    90
+    root@0c6f50b96708:/opt/gopath/src/github.com/hyperledger/fabric/peer# peer chaincode query -C mychannel -n mycc -c '{"Args":["query","b"]}'
+    210
