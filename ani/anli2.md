@@ -1,10 +1,10 @@
-# 案例2. Truffle开发以太坊DAPP
+# Truffle开发以太坊DAPP
 
 **step 1.创建一个项目**
 
 > 1.项目初始化
 >
-> ```
+> ```text
 > $ mkdir dapp
 > $ cd dapp
 > $ truffle unbox webpack
@@ -12,7 +12,7 @@
 >
 > 执行如图：
 >
-> ![](/assets/选区_011.png)
+> ![](../.gitbook/assets/选区_011.png)
 >
 > 执行以上命令之后，文件夹内会自动生成开发所需要的目录结构：
 >
@@ -48,7 +48,7 @@
 > >
 > > 根据你选择的不同客户端，修改端口，其他代码不要动。
 >
-> ![](/assets/选区_012.png)
+> ![](../.gitbook/assets/选区_012.png)
 >
 > 2.编译合约
 >
@@ -56,7 +56,7 @@
 > >
 > > 输入命令：
 > >
-> > ```
+> > ```text
 > >  $ truffle compile
 > > ```
 > >
@@ -73,26 +73,26 @@
 > >
 > > 开启客户端之后再输入命令：
 > >
-> > ```
+> > ```text
 > >  $ truffle migrate
 > > ```
 > >
 > > 执行成功，会出现以下界面：  
-> > ![](/assets/选区_013.png)
+> > ![](../.gitbook/assets/选区_013.png)
 
 **step 4.测试网页与合约交互**
 
 > 上面的合约部署成功后，我们就可以在服务器中查看效果了。执行:
 >
-> ```
+> ```text
 >   $ npm run dev
 > ```
 >
-> ![](/assets/选区_014.png)
+> ![](../.gitbook/assets/选区_014.png)
 >
 > 浏览器打开[http://localhost:8080/](http://localhost:8080/) 可以看到一个demo 页面。
 >
-> ![](/assets/选区_015.png)
+> ![](../.gitbook/assets/选区_015.png)
 >
 > 这个是truffle unbox webpack后默认产生的MetaCoin合约，并生成了一个简单的界面。在这里你可以向其他地址发送MetaCoin。
 >
@@ -102,7 +102,5 @@
 >
 > 如果你用的以太坊客户端是Ganache 或 Truffle Develop的话，就需要Custom RPC 添加 [http://localhost：7545](http://localhost：7545) 或 [http://localhost：9545](http://localhost：9545) 根据你用的客户端来设置。
 >
-> ![](/assets/20.png)
-
-
+> ![](../.gitbook/assets/20.png)
 

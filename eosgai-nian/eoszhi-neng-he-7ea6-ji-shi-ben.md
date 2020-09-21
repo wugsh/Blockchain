@@ -1,4 +1,6 @@
-```
+# EOS智能合约-记事本
+
+```text
 #include <eosiolib/eosio.hpp>
 #include <string>
 
@@ -58,13 +60,11 @@ class record:public eosio::contract
 EOSIO_ABI(record, (write)(remove));
 ```
 
-```
+```text
 可以看到abi里有四种结构 types,structs,actions,tables
 我看到很多合约types都是一样的,所以暂时先这样写,不做分析,等官方文档通知
 structs可以理解成定义的所有结构,包括转账的transfer结构,account的schema结构;
 action对应的是合约的所有事件;
 tables对应的是我们所涉及到在区块链上数据的存储,这里账户的信息会存在区块链上
 ```
-
-
 

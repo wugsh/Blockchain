@@ -4,23 +4,23 @@ _与以太坊的智能合约交互，除了使用web3.js，还可以使用另外
 
 ## truffle-contract具有以下特色：
 
- 1. **同步的交易：**可以确保在交易生效之后再继续执行其他操作 
- 2. **返回Promise：**每个封装的合约函数会返回Promise，可以对它进行.then操作，避免了回调地狱（callback hell）问题;
- 3. **为交易提供了默认参数：**例如from或gas 
- 4. **为每个同步的交易返回logs、交易receipt和交易hash**
+1. **同步的交易：**可以确保在交易生效之后再继续执行其他操作 
+2. **返回Promise：**每个封装的合约函数会返回Promise，可以对它进行.then操作，避免了回调地狱（callback hell）问题;
+3. **为交易提供了默认参数：**例如from或gas 
+4. **为每个同步的交易返回logs、交易receipt和交易hash**
 
 ## 安装truffle-contract：
 
 首先新建一个Nodejs项目并初始化：
 
-```
+```text
 $ mkdir truffle-contract-test && cd truffle-contract-test
 $ npm init
 ```
 
 接下来安装truffle-contract：
 
-```
+```text
 $ npm install web3 --save
 $ npm install truffle-contract --save
 ```
@@ -31,7 +31,7 @@ $ npm install truffle-contract --save
 
 在Remix中编写智能合约和部署智能合约，获得合约地址和合约abi。
 
-```
+```text
 pragma solidity ^0.4.24;
 
 contract MetaCoin {
@@ -60,7 +60,7 @@ contract MetaCoin {
 
 与web3.js类似，要使用truffle-contract，需要先初始化合约对象，然后连接到一个以太坊节点。在自己的工程新建一个js文件，输入以下代码：
 
-```
+```text
 //引用web3
 var Web3 = require("web3");
 
@@ -87,7 +87,7 @@ MetaCoin.setProvider(provider);
 
 因为智能合约通过Remix已经部署好，这里就用at的方式获取智能合约的实例，来调用合约。
 
-```
+```text
 // 账户地址
 var account_one = "0x68b73956d704007514e9257813bdc58cdf3c969a";
 
@@ -107,7 +107,7 @@ MetaCoin.at(contract_address).then(function(instance){
 
 **调用sendCoin函数的情况：**
 
-```
+```text
 // 账户地址
 var account_one = "0x68b73956d704007514e9257813bdc58cdf3c969a";
 var account_two = "0x9c3c1a2f5ef913fac44f0348a78f68d835f3f26e";
@@ -133,7 +133,7 @@ MetaCoin.at(contract_address).then(function(instance){
 调用sendCoin会向区块链发送一笔交易，在交易生效之后，才会执行回调函数，回调函数的参数中包含了交易hash、交易执行结果以及交易产生的事件。  
 **捕获事件**可以通过result.logs获取交易触发的事件：
 
-```
+```text
 // 账户地址
 var account_one = "0x68b73956d704007514e9257813bdc58cdf3c969a";
 var account_two = "0x9c3c1a2f5ef913fac44f0348a78f68d835f3f26e";
@@ -171,7 +171,7 @@ sendCoin执行完后会触发一个Transfer事件，在回调函数中，通过�
 
 ## 一个完整的例子
 
-```
+```text
 var Web3 = require("web3");
 var contract = require("truffle-contract");
 
@@ -212,6 +212,4 @@ MetaCoin.at(contract_address).then(function(instance){
     console.log("Error:", err.message);
 });
 ```
-
-
 

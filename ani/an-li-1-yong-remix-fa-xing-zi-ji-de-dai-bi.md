@@ -1,4 +1,4 @@
-# 案例1:  使用Remix发行自己的代币
+# 使用Remix发行自己的代币
 
 Remix [https://remix.ethereum.org/](https://remix.ethereum.org/) 这是最简单方便的智能合约开发环境，直接在浏览器里编写、调试智能合约。
 
@@ -10,16 +10,16 @@ Remix [https://remix.ethereum.org/](https://remix.ethereum.org/) 这是最简单
 
 > 点击左上角“+”号创建一份新的合约，只能以.sol为后缀，如图：
 >
-> > ![](/assets/选区_001.png)
+> > ![](../.gitbook/assets/选区_001.png)
 
-**step 3.  编写代币合约代码**  
+**step 3. 编写代币合约代码**  
 使用solidity编写合约,这个合约只做两件事：
 
 > > 创造代币：发起合约时创造指定数量的代币，给创建者所有初始代币.
 > >
 > > 转移代币：转移指定数量的代币到指定的Ethereum帐户
 
-```
+```text
 pragma solidity ^0.4.20;
 
 contract MyToken {
@@ -53,7 +53,7 @@ contract MyToken {
 
 > 点击文档右边的 “Start to compile” 开始编译，旁边没有跳出红色的 ERROR 就代表编译成功。
 >
-> > ![](/assets/选区_002.png)
+> > ![](../.gitbook/assets/选区_002.png)
 
 **step 5.在本地部署合约**
 
@@ -61,7 +61,7 @@ contract MyToken {
 >
 > > 点击右边的RUN，Environment 选择 JavaScript VM。
 > >
-> > ![](/assets/选区_003.png)
+> > ![](../.gitbook/assets/选区_003.png)
 > >
 > > Remix有三种不同的环境选项，可用于部署/测试Solidity合约：JavaScript VM，Injected Web3和Web3 Provider。
 > >
@@ -76,7 +76,7 @@ contract MyToken {
 > >
 > > Mytoken合约有两个功能：balanceOf\(查询余额\) 和 transfer\(转移代币\)。如图：
 > >
-> > ![](/assets/选区_004.png)
+> > ![](../.gitbook/assets/选区_004.png)
 
 **step 6. 执行合约**
 
@@ -84,7 +84,7 @@ contract MyToken {
 >
 > > 复制刚才发币用的账户，填入balanceOf 后面的输入框，再点击balanceOf按钮，就会出现这个帐户的余额，如图：
 > >
-> > ![](/assets/选区_005.png)
+> > ![](../.gitbook/assets/选区_005.png)
 >
 > 2.转账
 >
@@ -97,9 +97,9 @@ contract MyToken {
 > >
 > > d. 通过balanceOf对A账户进行查询，就会发现A账户的余额变成了990个。
 > >
-> > ![](/assets/选区_006.png)
+> > ![](../.gitbook/assets/选区_006.png)
 > >
-> > ![](/assets/选区_007.png)
+> > ![](../.gitbook/assets/选区_007.png)
 
 **step 7.用Injected Web3环境测试**
 
@@ -107,7 +107,7 @@ contract MyToken {
 >
 > > 先将MetaMask网络环境切换到Ropsten.
 > >
-> > ![](/assets/009.png)
+> > ![](../.gitbook/assets/009.png)
 >
 > 2.选择测试网路
 >
@@ -115,15 +115,11 @@ contract MyToken {
 > >
 > > Account账户已经显示了我自己的钱包地址了。
 > >
-> > ![](/assets/选区_008.png)
+> > ![](../.gitbook/assets/选区_008.png)
 >
 > 3.部署合约
 >
 > > 用刚才同样的方式，这次尝试发行200个代币，按 create 部署合约，就会看到 MetaMask 的弹出交互窗口，显示了交易信息。需要花费Eth！
 > >
-> > ![](/assets/10.png)
-
-### 
-
-
+> > ![](../.gitbook/assets/10.png)
 

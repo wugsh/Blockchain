@@ -1,4 +1,4 @@
-# Truffle使用
+# Truffle的使用
 
 _Truffle是一个以太坊智能合约开发框架，利用它可以方便地生成项目模板、编译合约、部署合约到区块链、测试合约等等。_
 
@@ -6,14 +6,14 @@ _Truffle是一个以太坊智能合约开发框架，利用它可以方便地生
 
 新建一个目录并进入该目录，然后创建项目：
 
-```
+```text
 $ mkdir myContract && cd myContract
 $ truffle init
 ```
 
 执行truffle init后，会在当前目录生成一个项目模板，生成的项目目录结构如下:
 
-```
+```text
 myContract
 ├── contracts
 │     │   
@@ -40,13 +40,13 @@ contracts下面存放合约代码，migrations里面是部署合约的脚本，t
 
 在终端中输入：
 
-```
+```text
 $ truffle compile
 ```
 
 如果出现类似如下输出，则编译成功：
 
-```
+```text
 Compiling Migrations.sol...
 Writing artifacts to ./build/contracts
 ```
@@ -57,7 +57,7 @@ Writing artifacts to ./build/contracts
 
 修改truffle.js文件
 
-```
+```text
 module.exports = {
   // See <http://truffleframework.com/docs/advanced/configuration>
   // to customize your Truffle configuration!
@@ -75,13 +75,13 @@ module.exports = {
 
 最后部署合约到区块链，在终端中执行：
 
-```
+```text
 $ truffle migrate --reset
 ```
 
 如果出现类似如下输出，则部署成功：
 
-```
+```text
 ... (省略)
 Running migration: 1_initial_migration.js
   Deploying ConvertLib...
@@ -98,7 +98,7 @@ Saving artifacts...
 **进入truffle控制台调试合约**  
 合约部署成功后，在终端执行truffle console，可以进入Javascript控制台对合约进行调试：
 
-```
+```text
 $ truffle console
 truffle(default)>
 ```
@@ -107,7 +107,7 @@ truffle(default)>
 
 获取已部署的合约对象：
 
-```
+```text
 truffle(default)> var metacoin = Migrations.deployed()
 ```
 
@@ -116,9 +116,7 @@ truffle(default)> var metacoin = Migrations.deployed()
 **运行单元测试**  
 Truffle集成了nodejs测试框架Chai\([https://github.com/chaijs/chai\)，我们可以使用nodejs内置的断言模块assert对合约进行测试。在test/目录下编写合约的测试脚本，然后通过](https://github.com/chaijs/chai%29，我们可以使用nodejs内置的断言模块assert对合约进行测试。在test/目录下编写合约的测试脚本，然后通过) truffle test 命令执行脚本：
 
-```
+```text
 $ truffle test
 ```
-
-
 
